@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Foundation
+import CoreData
 
 func getTime() -> String {
     
@@ -21,86 +22,51 @@ func getTime() -> String {
 }
 
 struct MRUserRow: View {
-    @EnvironmentObject var userData: UserData
-    var mruser: MRUser
-    var mruserIndex: Int {
-        userData.mrusers.firstIndex(where: { $0.id == mruser.id })!
-    }
-    
-    //var nameColor = .gray
-    
-    //if self.userData.mrusers[self.mruserIndex].isLoggedIn {
-    
-    
-    var body: some View {
-        HStack {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @ObservedObject var mruser: MRUser
+    var linkToDetail: Bool = true
 
-                if self.userData.mrusers[self.mruserIndex].isLoggedIn {
-                    mruser.image
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                    VStack {
-                        Text("\(mruser.firstName) \(mruser.lastName)")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                    
-                        Text(
-                            "Logged in: \(self.userData.mrusers[self.mruserIndex].lastLogin)"
-                            )
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+  
+    var body: some View {
+       
+        
+        //let dest = { UserDetailView(mruser: self.mruser)
+         //   .environment(\.managedObjectContext, self.managedObjectContext) as! Bool ?? linkToDetail : {} }
+        
+        NavigationLink(destination:
+            UserDetailView(mruser: self.mruser)
+                .environment(\.managedObjectContext, self.managedObjectContext)
+            )
+        {
+           HStack {
+                    VStack(alignment: .leading) {
+                        Text(mruser.firstName)
+                        Text(mruser.lastName)
                     }
-                }
-                else {
-                    mruser.image
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .colorInvert()
-                    VStack {
-                    Text("\(mruser.firstName) \(mruser.lastName)")
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                    Text(
-                        "Logged out: \(self.userData.mrusers[self.mruserIndex].lastLogout)"
-                        )
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    
-                    }
-            }
-            Spacer()
-            Button(action : {
-                self.userData.mrusers[self.mruserIndex].isLoggedIn.toggle()
-                if self.userData.mrusers[self.mruserIndex].isLoggedIn {
-                    self.userData.mrusers[self.mruserIndex].lastLogin = getTime()
-                    }
-                else {
-                    self.userData.mrusers[self.mruserIndex].lastLogout = getTime()
-                    
-                    }
-                }) {
-                    if self.userData.mrusers[self.mruserIndex].isLoggedIn {
+                
+                    Spacer()
+            
+                    if self.mruser.isLoggedIn {
                         Image(systemName: "circle.fill")
                             .foregroundColor(Color.green)
-                    }
+                        }
                     else {
                         Image(systemName: "circle")
                             .foregroundColor(Color.black)
-                    }
-                
+                        }
+           
                 }
         }
-        //.padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            MRUserRow(mruser: mruserData[0])
-            MRUserRow(mruser: mruserData[4])
-        }
-        //.previewLayout(.fixed(width: 500, height: 50))
+    
         
+        
+       
     }
 }
+        
+    
+   
+    
+    
+    
+  

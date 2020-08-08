@@ -6,8 +6,8 @@
 //  Copyright © 2020 Andrew Connolly. All rights reserved.
 //
 
-import UIKit
 import SwiftUI
+import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,13 +21,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         // let mruserRow = MRUserRow(mruser: userData[0])
-
+        
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let contentView = MRUserList().environment(\.managedObjectContext, context)
+        
+        //let contentView = MRUserList()
+        
+        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(
-                rootView: MRUserList()
-                    .environmentObject(UserData())
+                rootView: contentView
+                
+                        //    .environmentObject(UserData())
             )
             self.window = window
             window.makeKeyAndVisible()
@@ -60,8 +68,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        // saveContext()
     }
 
-
+    
+    
+    
 }
 
