@@ -41,8 +41,10 @@
 import SwiftUI
 
 struct AddUser: View {
+    //@State private var showingAlert = false
     static let DefaultUserFirstName = "John"
     static let DefaultUserLastName = "Deere"
+    let contacts: FetchedResults<MRUser>
 
     @State var firstName = ""
     @State var lastName = ""
@@ -54,7 +56,7 @@ struct AddUser: View {
     let onComplete: (String, String) -> Void
 
     var body: some View {
-        NavigationView {
+
             Form {
                 Section(header: Text("First Name")) {
                     TextField("First Name", text: $firstName)
@@ -68,15 +70,28 @@ struct AddUser: View {
                         Text("Add User")
                     }
                 }
-            }
-            .navigationBarTitle(Text("Add User"), displayMode: .inline)
-        }
+            }     
   }
 
   private func addUserAction() {
+    var doesUserExist: Bool = false
+    var fn = firstName.trimmingCharacters(in: .whitespacesAndNewlines)
+    var ln = lastName.trimmingCharacters(in: .whitespacesAndNewlines)
+    for user in contacts {
+        if (user.firstName == fn && user.lastName == ln) {
+            doesUserExist = true
+        }
+        
+    }
+    if doesUserExist {
+        //self.showingAlert = true
+        fn = "Ned"
+        ln = "Smedley"
+    
+    }
     onComplete(
-      firstName.isEmpty ? AddUser.DefaultUserFirstName : firstName,
-      lastName.isEmpty ? AddUser.DefaultUserLastName : lastName)
+      fn.isEmpty ? AddUser.DefaultUserFirstName : fn,
+      ln.isEmpty ? AddUser.DefaultUserLastName : ln)
   }
 }
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MRUser" representedClassName="MRUser" syncable="YES">
+        <attribute name="createdOn" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isLoggedIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lastLogin" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastLogout" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="nSessions" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sessionContacts" optional="YES" attributeType="String" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Contact]"/>
+        <attribute name="sessions" optional="YES" attributeType="String" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Session]"/>
+        <attribute name="sessionTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Session" representedClassName="Session" syncable="YES" codeGenerationType="class">
+        <attribute name="fin" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isCur" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="n" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="users" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="MRUser" positionX="-45" positionY="0" width="128" height="208"/>
+        <element name="Session" positionX="-27" positionY="99" width="128" height="133"/>
+    </elements>
+</model>

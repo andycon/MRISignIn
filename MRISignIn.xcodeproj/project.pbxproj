@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1503DFA24EB57CA0075084D /* ContactTrace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1503DF924EB57CA0075084D /* ContactTrace.swift */; };
+		A1503DFC24EB842C0075084D /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A1503DFB24EB842C0075084D /* Quicksand-Regular.otf */; };
+		A174B51624E5AFC400800AA7 /* SessionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A174B51524E5AFC400800AA7 /* SessionRow.swift */; };
+		A174B51824E5B12D00800AA7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A174B51724E5B12D00800AA7 /* Helper.swift */; };
 		A184056424DDC31500B6025F /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184056324DDC31500B6025F /* UserDetailView.swift */; };
 		A184056624DE114400B6025F /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184056524DE114400B6025F /* Welcome.swift */; };
 		A184056824DF3C8A00B6025F /* scanner.png in Resources */ = {isa = PBXBuildFile; fileRef = A184056724DF3C8A00B6025F /* scanner.png */; };
+		A18405AC24E3555500B6025F /* Model7.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = A18405AA24E3555500B6025F /* Model7.xcdatamodeld */; };
+		A18F177A24EB2EB5003A05A9 /* SessionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18F177924EB2EB5003A05A9 /* SessionDetail.swift */; };
 		A1A2F41F24CA20F7007C1CEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2F41E24CA20F7007C1CEC /* AppDelegate.swift */; };
 		A1A2F42124CA20F7007C1CEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2F42024CA20F7007C1CEC /* SceneDelegate.swift */; };
 		A1A2F42324CA20F7007C1CEC /* MRUserRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2F42224CA20F7007C1CEC /* MRUserRow.swift */; };
@@ -31,10 +37,11 @@
 		A1A2F45B24CA3B49007C1CEC /* hiddenlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1A2F44E24CA3B49007C1CEC /* hiddenlake.jpg */; };
 		A1A2F45C24CA3B49007C1CEC /* charleyrivers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1A2F44F24CA3B49007C1CEC /* charleyrivers.jpg */; };
 		A1A2F46124CA4C63007C1CEC /* MRUserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2F46024CA4C63007C1CEC /* MRUserList.swift */; };
-		A1A2F46824D0C895007C1CEC /* MRUserDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1A2F46624D0C895007C1CEC /* MRUserDB.xcdatamodeld */; };
 		A1A2F46A24D0D5D8007C1CEC /* AddUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2F46924D0D5D8007C1CEC /* AddUser.swift */; };
-		A1B9A97F24DC80A50062D42D /* MRUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B9A97D24DC80A50062D42D /* MRUser+CoreDataClass.swift */; };
-		A1B9A98024DC80A50062D42D /* MRUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B9A97E24DC80A50062D42D /* MRUser+CoreDataProperties.swift */; };
+		A1E2732E24EAF9B7004E9966 /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E2732A24EAF9B7004E9966 /* Session+CoreDataClass.swift */; };
+		A1E2732F24EAF9B7004E9966 /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E2732B24EAF9B7004E9966 /* Session+CoreDataProperties.swift */; };
+		A1E2733024EAF9B7004E9966 /* MRUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E2732C24EAF9B7004E9966 /* MRUser+CoreDataClass.swift */; };
+		A1E2733124EAF9B7004E9966 /* MRUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E2732D24EAF9B7004E9966 /* MRUser+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +55,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1503DF924EB57CA0075084D /* ContactTrace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTrace.swift; sourceTree = "<group>"; };
+		A1503DFB24EB842C0075084D /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Regular.otf"; path = "MRISignIn/Quicksand-Regular.otf"; sourceTree = "<group>"; };
+		A1503DFD24ECA4450075084D /* MRISignIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MRISignIn.entitlements; sourceTree = "<group>"; };
+		A174B51524E5AFC400800AA7 /* SessionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRow.swift; sourceTree = "<group>"; };
+		A174B51724E5B12D00800AA7 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A184056324DDC31500B6025F /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		A184056524DE114400B6025F /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		A184056724DF3C8A00B6025F /* scanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanner.png; sourceTree = "<group>"; };
+		A18405AB24E3555500B6025F /* Model5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model5.xcdatamodel; sourceTree = "<group>"; };
+		A18F177924EB2EB5003A05A9 /* SessionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetail.swift; sourceTree = "<group>"; };
 		A1A2F41B24CA20F7007C1CEC /* MRISignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRISignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A2F41E24CA20F7007C1CEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A2F42024CA20F7007C1CEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,10 +90,11 @@
 		A1A2F44E24CA3B49007C1CEC /* hiddenlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hiddenlake.jpg; sourceTree = "<group>"; };
 		A1A2F44F24CA3B49007C1CEC /* charleyrivers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = charleyrivers.jpg; sourceTree = "<group>"; };
 		A1A2F46024CA4C63007C1CEC /* MRUserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRUserList.swift; sourceTree = "<group>"; };
-		A1A2F46724D0C895007C1CEC /* MRUserDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MRUserDB.xcdatamodel; sourceTree = "<group>"; };
 		A1A2F46924D0D5D8007C1CEC /* AddUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUser.swift; sourceTree = "<group>"; };
-		A1B9A97D24DC80A50062D42D /* MRUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MRUser+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A1B9A97E24DC80A50062D42D /* MRUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MRUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1E2732A24EAF9B7004E9966 /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1E2732B24EAF9B7004E9966 /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1E2732C24EAF9B7004E9966 /* MRUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MRUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1E2732D24EAF9B7004E9966 /* MRUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MRUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +118,7 @@
 		A1A2F41224CA20F7007C1CEC = {
 			isa = PBXGroup;
 			children = (
+				A1503DFB24EB842C0075084D /* Quicksand-Regular.otf */,
 				A1A2F41D24CA20F7007C1CEC /* MRISignIn */,
 				A1A2F43424CA20F8007C1CEC /* MRISignInTests */,
 				A1A2F41C24CA20F7007C1CEC /* Products */,
@@ -121,13 +137,13 @@
 		A1A2F41D24CA20F7007C1CEC /* MRISignIn */ = {
 			isa = PBXGroup;
 			children = (
+				A1503DFD24ECA4450075084D /* MRISignIn.entitlements */,
 				A1A2F45F24CA3CA1007C1CEC /* Models */,
-				A1B9A97D24DC80A50062D42D /* MRUser+CoreDataClass.swift */,
-				A1B9A97E24DC80A50062D42D /* MRUser+CoreDataProperties.swift */,
 				A1A2F44224CA3AD3007C1CEC /* Resources */,
 				A1A2F41E24CA20F7007C1CEC /* AppDelegate.swift */,
 				A1A2F42024CA20F7007C1CEC /* SceneDelegate.swift */,
 				A1A2F42224CA20F7007C1CEC /* MRUserRow.swift */,
+				A18405AA24E3555500B6025F /* Model7.xcdatamodeld */,
 				A184056524DE114400B6025F /* Welcome.swift */,
 				A1A2F42424CA20F8007C1CEC /* Assets.xcassets */,
 				A1A2F42924CA20F8007C1CEC /* LaunchScreen.storyboard */,
@@ -135,8 +151,11 @@
 				A1A2F42624CA20F8007C1CEC /* Preview Content */,
 				A1A2F46024CA4C63007C1CEC /* MRUserList.swift */,
 				A1A2F46924D0D5D8007C1CEC /* AddUser.swift */,
-				A1A2F46624D0C895007C1CEC /* MRUserDB.xcdatamodeld */,
 				A184056324DDC31500B6025F /* UserDetailView.swift */,
+				A1503DF924EB57CA0075084D /* ContactTrace.swift */,
+				A174B51724E5B12D00800AA7 /* Helper.swift */,
+				A174B51524E5AFC400800AA7 /* SessionRow.swift */,
+				A18F177924EB2EB5003A05A9 /* SessionDetail.swift */,
 			);
 			path = MRISignIn;
 			sourceTree = "<group>";
@@ -182,6 +201,10 @@
 		A1A2F45F24CA3CA1007C1CEC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A1E2732C24EAF9B7004E9966 /* MRUser+CoreDataClass.swift */,
+				A1E2732A24EAF9B7004E9966 /* Session+CoreDataClass.swift */,
+				A1E2732B24EAF9B7004E9966 /* Session+CoreDataProperties.swift */,
+				A1E2732D24EAF9B7004E9966 /* MRUser+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,6 +292,7 @@
 			files = (
 				A1A2F45224CA3B49007C1CEC /* twinlake.jpg in Resources */,
 				A1A2F45824CA3B49007C1CEC /* rainbowlake.jpg in Resources */,
+				A18405AC24E3555500B6025F /* Model7.xcdatamodeld in Resources */,
 				A1A2F42B24CA20F8007C1CEC /* LaunchScreen.storyboard in Resources */,
 				A1A2F45C24CA3B49007C1CEC /* charleyrivers.jpg in Resources */,
 				A1A2F45924CA3B49007C1CEC /* lakemcdonald.jpg in Resources */,
@@ -279,6 +303,7 @@
 				A1A2F45324CA3B49007C1CEC /* silversalmoncreek.jpg in Resources */,
 				A1A2F45A24CA3B49007C1CEC /* mruserData.json in Resources */,
 				A1A2F45724CA3B49007C1CEC /* chincoteague.jpg in Resources */,
+				A1503DFC24EB842C0075084D /* Quicksand-Regular.otf in Resources */,
 				A1A2F42824CA20F8007C1CEC /* Preview Assets.xcassets in Resources */,
 				A1A2F45524CA3B49007C1CEC /* icybay.jpg in Resources */,
 				A1A2F45B24CA3B49007C1CEC /* hiddenlake.jpg in Resources */,
@@ -301,13 +326,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A174B51824E5B12D00800AA7 /* Helper.swift in Sources */,
 				A1A2F46A24D0D5D8007C1CEC /* AddUser.swift in Sources */,
+				A1E2732E24EAF9B7004E9966 /* Session+CoreDataClass.swift in Sources */,
+				A1E2733024EAF9B7004E9966 /* MRUser+CoreDataClass.swift in Sources */,
+				A174B51624E5AFC400800AA7 /* SessionRow.swift in Sources */,
+				A18F177A24EB2EB5003A05A9 /* SessionDetail.swift in Sources */,
 				A1A2F41F24CA20F7007C1CEC /* AppDelegate.swift in Sources */,
-				A1A2F46824D0C895007C1CEC /* MRUserDB.xcdatamodeld in Sources */,
-				A1B9A98024DC80A50062D42D /* MRUser+CoreDataProperties.swift in Sources */,
 				A184056424DDC31500B6025F /* UserDetailView.swift in Sources */,
-				A1B9A97F24DC80A50062D42D /* MRUser+CoreDataClass.swift in Sources */,
+				A1E2732F24EAF9B7004E9966 /* Session+CoreDataProperties.swift in Sources */,
 				A184056624DE114400B6025F /* Welcome.swift in Sources */,
+				A1E2733124EAF9B7004E9966 /* MRUser+CoreDataProperties.swift in Sources */,
+				A1503DFA24EB57CA0075084D /* ContactTrace.swift in Sources */,
 				A1A2F46124CA4C63007C1CEC /* MRUserList.swift in Sources */,
 				A1A2F42124CA20F7007C1CEC /* SceneDelegate.swift in Sources */,
 				A1A2F42324CA20F7007C1CEC /* MRUserRow.swift in Sources */,
@@ -462,8 +492,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MRISignIn/MRISignIn.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MRISignIn/Preview Content\"";
+				DEVELOPMENT_TEAM = 52WYBMS4W2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MRISignIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -481,8 +513,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MRISignIn/MRISignIn.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MRISignIn/Preview Content\"";
+				DEVELOPMENT_TEAM = 52WYBMS4W2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MRISignIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -571,13 +605,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A1A2F46624D0C895007C1CEC /* MRUserDB.xcdatamodeld */ = {
+		A18405AA24E3555500B6025F /* Model7.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A1A2F46724D0C895007C1CEC /* MRUserDB.xcdatamodel */,
+				A18405AB24E3555500B6025F /* Model5.xcdatamodel */,
 			);
-			currentVersion = A1A2F46724D0C895007C1CEC /* MRUserDB.xcdatamodel */;
-			path = MRUserDB.xcdatamodeld;
+			currentVersion = A18405AB24E3555500B6025F /* Model5.xcdatamodel */;
+			path = Model7.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

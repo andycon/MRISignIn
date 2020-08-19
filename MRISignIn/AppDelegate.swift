@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var persistentContainer: NSPersistentContainer = {
 
-      let container = NSPersistentContainer(name: "MRUserDB")
+      let container = NSPersistentContainer(name: "Model7")
 
       container.loadPersistentStores { _, error in
     

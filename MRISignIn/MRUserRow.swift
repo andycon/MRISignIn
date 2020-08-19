@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Foundation
 import CoreData
 
 func getTime() -> String {
@@ -22,46 +21,64 @@ func getTime() -> String {
 }
 
 struct MRUserRow: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
+    var managedObjectContext: NSManagedObjectContext
+    var sess: FetchedResults<Session>
     @ObservedObject var mruser: MRUser
-    var linkToDetail: Bool = true
+    var contacts: FetchedResults<MRUser>
+    @State var linkToDetail: Bool = false
+    var nusers: Int
 
   
+    func onComplete(returnBool: Bool) {
+        
+    }
+    
     var body: some View {
        
         
         //let dest = { UserDetailView(mruser: self.mruser)
          //   .environment(\.managedObjectContext, self.managedObjectContext) as! Bool ?? linkToDetail : {} }
         
-        NavigationLink(destination:
+        /*NavigationLink(destination:
             UserDetailView(mruser: self.mruser)
                 .environment(\.managedObjectContext, self.managedObjectContext)
             )
-        {
+        */
+        //NavigationView{
+        
            HStack {
+            
+        
                     VStack(alignment: .leading) {
                         Text(mruser.firstName)
                         Text(mruser.lastName)
                     }
-                
+     
                     Spacer()
-            
-                    if self.mruser.isLoggedIn {
-                        Image(systemName: "circle.fill")
-                            .foregroundColor(Color.green)
-                        }
-                    else {
-                        Image(systemName: "circle")
-                            .foregroundColor(Color.black)
-                        }
+                    
+            Button(action: { self.linkToDetail.toggle() } ) {
+                            if self.mruser.isLoggedIn {
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(Color.green)
+                                }
+                            else {
+                                Image(systemName: "circle")
+                                    .foregroundColor(Color.black)
+                                }
+            }
+                    
            
                 }
-        }
-    
-        
-        
-       
+                .sheet(isPresented: $linkToDetail) {
+                    UserDetailView(managedObjectContext: self.managedObjectContext, sess: self.sess,
+                                   mruser: self.mruser, contacts: self.contacts, nusers: self.nusers)
+                    {_ in
+                        self.linkToDetail = false
+                    }
+                }
     }
+        
+        
 }
         
     

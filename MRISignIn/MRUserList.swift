@@ -14,11 +14,23 @@ struct MRUserList: View {
     // @EnvironmentObject var userData: UserData
     //@State var mrusers: [MRUser] = []
     @State var isPresented = false
+    @State var showingAlert = false
+    @State var showUserDetail = false
+
     //@State var selectUser = false
     //@State private var refresh = false
     //private var didSave = NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave)
+    //var curSess: Session
     
-  
+    
+    
+    @FetchRequest(
+         entity: Session.entity(),
+         sortDescriptors: [
+           NSSortDescriptor(keyPath: \Session.start, ascending: false)
+         ]
+         //predicate: NSPredicate(format: "isCur == %@", NSNumber(value: true))
+       ) var sess: FetchedResults<Session>
     
     @FetchRequest(
       entity: MRUser.entity(),
@@ -46,63 +58,66 @@ struct MRUserList: View {
             VStack {
                 List {
                     ForEach(inmrusers, id: \.firstName) { mruser in
-                        
-                        //MRUserRow(mruser: mruser).environment(\.managedObjectContext, self.managedObjectContext)
-                        
                         HStack {
                                  VStack(alignment: .leading) {
+                                    
                                      Text(mruser.firstName)
                                      Text(mruser.lastName)
                                  }
-                             
                                  Spacer()
                                  Image(systemName: "circle.fill")
                                          .foregroundColor(Color.green)
-                                    
                              }
-                        
-                        
                         }
-                        .onDelete(perform: self.signOut)
+                        .onDelete(perform: self.deleteUser)
                     }
                     .navigationBarTitle(Text("Logged In"))
                     .navigationBarItems(leading:
-                        Button(action: {}) {
-                            Text("?")
-                        },
+                        Button(action: {}) { Text("?")},
                         trailing:
                             Button(action: { self.isPresented.toggle() }) {
                                 Image(systemName: "plus")
-                            }
-                    )
-                    
-                //}
-                
+                            })
                 Text("All MRUsers")
                     .frame(width: 295, alignment: .topLeading)
                     .font(.title)
-                    
-                    
-                   
                 List {
                     ForEach(allmrusers, id: \.firstName) { mruser in
-                        MRUserRow(mruser: mruser).environment(\.managedObjectContext, self.managedObjectContext)
-                   
-                   
-                    }
+                        
+                        MRUserRow(managedObjectContext: self.managedObjectContext, sess: self.sess,
+                                  mruser: mruser, contacts: self.allmrusers, nusers: self.inmrusers.count)
+                        
+                    }.onDelete(perform: self.deleteUser)
                     
                 }
-                .sheet(isPresented: $isPresented) {
-                  AddUser { firstName, lastName in
-                    self.addUser(firstName: firstName, lastName: lastName)
-                    self.isPresented = false
-                  }
+                .alert(isPresented: $showingAlert) {
+                    Alert(
+                        title: Text("User already exists!"),
+                        message: Text("Choose name from All MRUsers list.")
+                    )
                 }
-
                 }
             }
             
-            Welcome(message: "Welcome")
+            
+            
+          if self.isPresented {
+                AddUser(contacts: self.allmrusers) { firstName, lastName in
+                if !(firstName == "John" && lastName == "Deere") {
+                    if !(firstName == "Ned" && lastName == "Smedley") {
+                        self.addUser(firstName: firstName, lastName: lastName)
+                    }
+                    else {
+                        self.showingAlert = true
+                    }
+                }
+                 
+                    self.isPresented = false
+                }
+            }
+            else {
+                Welcome()
+            }
         }
            
     }
@@ -123,14 +138,21 @@ struct MRUserList: View {
               
         let newUser = MRUser(context: managedObjectContext)
         
+        
         newUser.firstName = firstName
         newUser.lastName = lastName
         newUser.isLoggedIn = false
-        newUser.lastLogin = "never"
-        newUser.lastLogout = "never"
-      
+        newUser.createdOn = Date()
+        newUser.lastLogin = Date()
+        newUser.lastLogout = Date()
+        newUser.id = UUID()
+        newUser.sessions = ""
+        newUser.sessionContacts = ""
+        newUser.nSessions = 0
         saveContext()
     }
+    
+
     
     func deleteUser(at offsets: IndexSet){
         
